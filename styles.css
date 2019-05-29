@@ -67,9 +67,9 @@
 	border-width: 2px;
 	border: solid black;
 	font-size:1.5em;
-	margin-top: 30px;
 	transition: border-width 0.5s;
-	margin-bottom:5px;
+	width: 200px;
+	margin: 30px auto 5px auto;
 }
 
 .rsvpbutton:hover {
@@ -77,15 +77,16 @@
 }
 
 footer {
-	height: 40px;
+	height: 20px;
 	position: relative;
-	bottom:0;
-	background-color: #cccccc;
+	background-color: #000000;
 	font-size:.5em;
 	padding-left:5px;
+	color: #ffffff;
 }
 
 footer div {
 	float:right;
 	padding-right:5px;
+	text-decoration:none;
 }
