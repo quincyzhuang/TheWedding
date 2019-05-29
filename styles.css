@@ -90,3 +90,32 @@ footer div {
 	padding-right:5px;
 	text-decoration:none;
 }
+
+#modal {
+	display: none; /* Hidden by default */
+  	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+  	left: 0;
+  	top: 0;
+  	width: 100%; /* Full width */
+  	height: 100%; /* Full height */
+  	overflow: auto; /* Enable scroll if needed */
+  	color: #000000;
+  	background-color: rgba(0,0,0,.3);
+}
+
+#modal_content {
+	background-color:#ffffff;
+	width:70%;
+	margin: 10% auto 0 auto;
+	padding: 2% 5% 2% 5%;
+}
+#modal_close {
+	float:right;
+	font-weight:bold;
+	font-size:30px;
+}
+
+#modal_close:hover,#modal_close:focus {
+	cursor:pointer;
+}
