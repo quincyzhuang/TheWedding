@@ -4,7 +4,7 @@
  
  body {
  	margin: 0;
- 	 display: flex;
+ 	display: flex;
  	flex-direction: column;
  }
 
@@ -49,7 +49,7 @@
  	background-color:#000000;
  	overflow:hidden;
  }
- .picture_side {
+.picture_side {
  	padding:0;
  }
 .qrpic {
@@ -58,10 +58,9 @@
 }
 .text_side {
 	text-align:center;
-	padding-top:40px;
 	background-color: #FFFFFF;
 	color:#000000;
-	padding-top:0;
+	border: none;
 }
 .textsidebreak {
 	margin-top:0;
@@ -72,12 +71,12 @@
 }
 
 .rsvpbutton {
-	border-width: 2px;
 	border: solid black;
 	font-size:1.5em;
 	transition: border-width 0.5s;
 	width: 200px;
 	margin: 30px auto 5px auto;
+	padding: 0;
 }
 
 .rsvpbutton:hover {
