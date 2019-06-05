@@ -25,36 +25,43 @@ Here is the wedding registry
 //Modal content ends
 
 const closeModal = () => {
-	document.getElementById("modal").style.display = "none";
+	modal.style.display = "none";
+}
+
+const clickOutside = (event) => { // If user clicks outside modal popup, close modal
+	let clicked = event.target.id;
+	if( (clicked != modal.firstElementChild.id) && (clicked != '')){
+		closeModal();
+	}
 }
 
 const showModal = (event) => {
 	let type = event.target.id;
-	let title;
+	let text;
 	switch (type){
 		case "head_story":
 			modalbody.textContent = '';
-			title = document.createElement("div");
-			title.innerHTML=storycontent;
-			modalbody.append(title);
+			text = document.createElement("div");
+			text.innerHTML=storycontent;
+			modalbody.append(text);
 			break;
 		case "head_details":
 			modalbody.textContent = '';
-			title = document.createElement("div");
-			title.innerHTML=detailscontent;
-			modalbody.append(title);
+			text = document.createElement("div");
+			text.innerHTML=detailscontent;
+			modalbody.append(text);
 			break;
 		case "head_vip":
 			modalbody.textContent = '';
-			title = document.createElement("div");
-			title.innerHTML=vipcontent;
-			modalbody.append(title);
+			text = document.createElement("div");
+			text.innerHTML=vipcontent;
+			modalbody.append(text);
 			break;
 		case "head_registry":
 			modalbody.textContent = '';
-			title = document.createElement("div");
-			title.innerHTML=registrycontent;
-			modalbody.append(title);
+			text = document.createElement("div");
+			text.innerHTML=registrycontent;
+			modalbody.append(text);
 	}
 	modal.style.display = "block";
 }
@@ -64,3 +71,4 @@ details.addEventListener('click',showModal);
 vip.addEventListener('click',showModal);
 registry.addEventListener('click',showModal);
 closebutton.addEventListener('click',closeModal);
+modal.addEventListener('click',clickOutside);
