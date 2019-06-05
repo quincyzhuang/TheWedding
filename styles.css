@@ -46,11 +46,17 @@
 	text-decoration:underline;
 }
 .primary {
- 	background-color:#000000;
  	overflow:hidden;
+ 	display: flex;
+ 	flex-direction: row;
+ 	flex-wrap: wrap;
+ 	justify-content: space-evenly;
  }
 .picture_side {
  	padding:0;
+ 	width:60%;
+ 	background-color:#000000;
+ 	text-align:center;
  }
 .qrpic {
 	width:100%;
@@ -60,7 +66,6 @@
 	text-align:center;
 	background-color: #FFFFFF;
 	color:#000000;
-	border: none;
 }
 .textsidebreak {
 	margin-top:0;
