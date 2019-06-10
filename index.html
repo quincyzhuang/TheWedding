@@ -1,17 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 	<head>
 		<!--Link to external stylesheets here/fonts/bootstrap-->
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Rebecca and Quincy 2020</title>
 	</head>
 	<body>
 		<div class="main">
-			<nav class="header blackbk">
+			<nav class="header whitebk">
 				<ul class="flex_header">
+					<div id="hamburger">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<li>
 						<a href="#">Home</a>
 					</li>
@@ -29,8 +33,24 @@
 					</li>
 				</ul>
 			</nav>
-			<div class="hamburger">
-				=
+			<div id="mobilemenu">
+				<ul class="mobile_flex_header">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#" id="mobile_story">Our Story</a>
+					</li>
+					<li>
+						<a href="#" id="mobile_details">Details</a>
+					</li>
+					<li>
+						<a href="#" id="mobile_vip">VIPs</a>
+					</li>
+					<li>
+						<a href="#" id="mobile_registry">Registry</a>
+					</li>
+				</ul>
 			</div>
 			<div class="primary">
 					<div class="picture_side">
@@ -70,8 +90,5 @@
 	<!--JS goes here-->
 		<script type="text/javascript" src="js/timer.js"></script>
 		<script type="text/javascript" src="js/modalinteraction.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
