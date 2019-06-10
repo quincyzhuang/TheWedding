@@ -11,6 +11,7 @@ const modalbody = document.getElementById("modal_injection");
 const mobilemenu = document.getElementById("mobilemenu");
 const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
+const vpwidth = window.innerWidth;
 //Modal content begins here
 const storycontent = '<h2>Our Story</h2> Hello, this is our story.';
 
@@ -38,6 +39,13 @@ const closeModal = () => {
 const closeMobileMenu = () => {
 	mobilemenu.style.display = "none";
 	overlay.style.display = "none";
+}
+const resizeClose = () => {
+	let newWidth = this.innerWidth;
+	if(newWidth != vpwidth) {
+		closeMobileMenu();
+		vpwidth = newWidth;
+	}
 }
 const clickOutside = (event) => { // If user clicks outside modal popup, close modal
 	let clicked = event.target.id;
@@ -82,5 +90,5 @@ registry.addEventListener('click',showModal);
 closebutton.addEventListener('click',closeModal);
 modal.addEventListener('click',clickOutside);
 hamburger.addEventListener('click',showMobileMenu);
-window.addEventListener('resize',closeMobileMenu);
+window.addEventListener('resize',resizeClose);
 mobileclosebuttom.addEventListener('click',closeMobileMenu);
