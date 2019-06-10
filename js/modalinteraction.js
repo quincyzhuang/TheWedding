@@ -27,8 +27,12 @@ Here is the wedding registry
 //Modal content ends
 
 const interactMobileMenu = (event) => {
-	mobilemenu.style.display = "block";
-	console.log(event.target.srcElement)
+	let display = mobilemenu.style.display;
+	if (display === "block") {
+		mobilemenu.style.display = "none";
+	} else {
+		mobilemenu.style.display = "block";
+	}
 }
 const closeModal = () => {
 	modal.style.display = "none";
@@ -36,14 +40,12 @@ const closeModal = () => {
 const closeMobileMenu = () => {
 	mobilemenu.style.display = "none";
 }
-
 const clickOutside = (event) => { // If user clicks outside modal popup, close modal
 	let clicked = event.target.id;
 	if( (clicked != modal.firstElementChild.id) && (clicked != '')){
 		closeModal();
 	}
 }
-
 const showModal = (event) => {
 	let type = event.target.id;
 	let text;
@@ -74,7 +76,6 @@ const showModal = (event) => {
 	}
 	modal.style.display = "block";
 }
-
 story.addEventListener('click',showModal);
 details.addEventListener('click',showModal);
 vip.addEventListener('click',showModal);
