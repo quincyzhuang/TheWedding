@@ -4,6 +4,11 @@ const vip = document.getElementById("head_vip");
 const registry = document.getElementById("head_registry");
 const hamburger = document.getElementById("hamburger");
 
+const m_story = document.getElementById("mobile_story");
+const m_details = document.getElementById("mobile_details");
+const m_vip = document.getElementById("mobile_vip");
+const m_registry = document.getElementById("mobile_registry");
+
 const closebutton = document.getElementById("modal_close");
 const modal = document.getElementById("modal");
 const modalcontent = document.getElementById("modal_content");
@@ -11,7 +16,7 @@ const modalbody = document.getElementById("modal_injection");
 const mobilemenu = document.getElementById("mobilemenu");
 const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
-const vpwidth = window.innerWidth;
+var vpwidth = window.innerWidth;
 //Modal content begins here
 const storycontent = '<h2>Our Story</h2> Hello, this is our story.';
 
@@ -55,9 +60,19 @@ const clickOutside = (event) => { // If user clicks outside modal popup, close m
 }
 const showModal = (event) => {
 	let type = event.target.id;
+	if(type === '') {
+		type = event.target.parentElement.id;
+	}
+	console.log(type);
 	let text;
 	switch (type){
 		case "head_story":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=storycontent;
+			modalbody.append(text);
+			break;
+		case "mobile_story":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=storycontent;
@@ -69,13 +84,31 @@ const showModal = (event) => {
 			text.innerHTML=detailscontent;
 			modalbody.append(text);
 			break;
+		case "mobile_details":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=detailscontent;
+			modalbody.append(text);
+			break;
 		case "head_vip":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=vipcontent;
 			modalbody.append(text);
 			break;
+		case "mobile_vip":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=vipcontent;
+			modalbody.append(text);
+			break;
 		case "head_registry":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=registrycontent;
+			modalbody.append(text);
+			break;
+		case "mobile_registry":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=registrycontent;
@@ -87,6 +120,10 @@ story.addEventListener('click',showModal);
 details.addEventListener('click',showModal);
 vip.addEventListener('click',showModal);
 registry.addEventListener('click',showModal);
+m_story.addEventListener('click',showModal);
+m_details.addEventListener('click',showModal);
+m_vip.addEventListener('click',showModal);
+m_registry.addEventListener('click',showModal);
 closebutton.addEventListener('click',closeModal);
 modal.addEventListener('click',clickOutside);
 hamburger.addEventListener('click',showMobileMenu);
