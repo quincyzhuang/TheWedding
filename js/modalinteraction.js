@@ -9,7 +9,8 @@ const modal = document.getElementById("modal");
 const modalcontent = document.getElementById("modal_content");
 const modalbody = document.getElementById("modal_injection");
 const mobilemenu = document.getElementById("mobilemenu");
-
+const overlay = document.getElementById("overlay");
+const mobileclosebuttom = document.getElementById("closemobile");
 //Modal content begins here
 const storycontent = '<h2>Our Story</h2> Hello, this is our story.';
 
@@ -26,19 +27,17 @@ Here is the wedding registry
 `;
 //Modal content ends
 
-const interactMobileMenu = (event) => {
-	let display = mobilemenu.style.display;
-	if (display === "block") {
-		mobilemenu.style.display = "none";
-	} else {
-		mobilemenu.style.display = "block";
-	}
+const showMobileMenu = (event) => {
+	mobilemenu.style.display = "block";
+	overlay.style.display = "block";
 }
+
 const closeModal = () => {
 	modal.style.display = "none";
 }
 const closeMobileMenu = () => {
 	mobilemenu.style.display = "none";
+	overlay.style.display = "none";
 }
 const clickOutside = (event) => { // If user clicks outside modal popup, close modal
 	let clicked = event.target.id;
@@ -82,5 +81,6 @@ vip.addEventListener('click',showModal);
 registry.addEventListener('click',showModal);
 closebutton.addEventListener('click',closeModal);
 modal.addEventListener('click',clickOutside);
-hamburger.addEventListener('click',interactMobileMenu);
+hamburger.addEventListener('click',showMobileMenu);
 window.addEventListener('resize',closeMobileMenu);
+mobileclosebuttom.addEventListener('click',closeMobileMenu);
