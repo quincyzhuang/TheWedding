@@ -63,7 +63,6 @@ const showModal = (event) => {
 	if(type === '') {
 		type = event.target.parentElement.id;
 	}
-	console.log(type);
 	let text;
 	switch (type){
 		case "head_story":
