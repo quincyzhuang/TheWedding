@@ -3,6 +3,7 @@ const details = document.getElementById("head_details");
 const vip = document.getElementById("head_vip");
 const registry = document.getElementById("head_registry");
 const hamburger = document.getElementById("hamburger");
+const rsvp = document.getElementById("rsvp");
 
 const m_story = document.getElementById("mobile_story");
 const m_details = document.getElementById("mobile_details");
@@ -16,6 +17,7 @@ const modalbody = document.getElementById("modal_injection");
 const mobilemenu = document.getElementById("mobilemenu");
 const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
+
 var vpwidth = window.innerWidth;
 //Modal content begins here
 const storycontent = '<h2>Our Story</h2> Hello, this is our story.';
@@ -30,6 +32,37 @@ Here are the VIPs for this event.
 
 const registrycontent = `<h2>Registry</h2>
 Here is the wedding registry
+`;
+
+const rsvpform = `
+<form action="https://pi.wuzhuangclan.tk/rsvp.php" method="post">
+  <h2>RSVP Form</h2>
+  <div>
+    <label for="form_name">Your First and Last Name:</label>
+    <input type="text" id="form_name" name="full_name" required autofocus>
+  </div>
+  <div>
+  	<label for="form_email">Your Email Address:</label>
+  	<input type="email" id="form_email" name="email">
+  </div>
+  <div>
+    <label for="form_plusone">Will you be bringing a +1?</label>
+    <!--<input type="checkbox" id="form_plusone" value="1" name="plus_one">-->
+    <input type="radio" id="form_plusone" name="plradio" value="1">Yes
+    <input type="radio" name="plradio" value="0">No
+  </div>
+  <div>
+    	<label for="form_poname">+1's First and Last Name:</label>
+    	<input type="text" id="form_poname" name="1full_name">
+  </div>
+  <div>
+  	<label for="form_diet">Dietary Restrictions:</label>
+  	<textarea id="form_diet" name="diet"></textarea>
+  </div>
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
 `;
 //Modal content ends
 
@@ -53,17 +86,29 @@ const resizeClose = () => {
 	}
 }
 const clickOutside = (event) => { // If user clicks outside modal popup, close modal
-	let clicked = event.target.id;
-	if( (clicked != modal.firstElementChild.id) && (clicked != '')){
+	let clicked = event.target;
+	let parent = modal;
+	if( isDescendant(parent,clicked) === false ){
 		closeModal();
 	}
 }
+
+const isDescendant = (parent,child) => {
+	let node = child.parentNode;
+	while(node != null) {
+		if (node === parent) {
+			return true;
+		}
+		node = node.parentNode;
+	}
+	return false;
+}
+
 const showModal = (event) => {
 	let type = event.target.id;
 	if(type === '') {
 		type = event.target.parentElement.id;
 	}
-	console.log(type);
 	let text;
 	switch (type){
 		case "head_story":
@@ -113,9 +158,16 @@ const showModal = (event) => {
 			text = document.createElement("div");
 			text.innerHTML=registrycontent;
 			modalbody.append(text);
+			break
+		case "rsvp":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=rsvpform;
+			modalbody.append(text);
 	}
 	modal.style.display = "block";
 }
+
 story.addEventListener('click',showModal);
 details.addEventListener('click',showModal);
 vip.addEventListener('click',showModal);
@@ -129,3 +181,4 @@ modal.addEventListener('click',clickOutside);
 hamburger.addEventListener('click',showMobileMenu);
 window.addEventListener('resize',resizeClose);
 mobileclosebuttom.addEventListener('click',closeMobileMenu);
+rsvp.addEventListener('click',showModal);

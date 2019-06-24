@@ -154,8 +154,8 @@
 	border: solid black;
 	font-size:1.5em;
 	transition: border-width 0.5s;
-	width: 200px;
-	margin: 30px auto 15px auto;
+	width: 50%;
+	margin: 20px auto 15px auto;
 	padding: 0;
 }
 
@@ -201,6 +201,10 @@ footer a:hover {
   	background-color: rgba(0,0,0,.3);
 }
 
+form div {
+	margin: 5px;
+}
+
 #modal_content {
 	background-color:#ffffff;
 	width:70%;
@@ -213,6 +217,7 @@ footer a:hover {
 	font-size:30px;
 }
 
+
 #modal_close:hover,#modal_close:focus {
 	cursor:pointer;
 }
@@ -224,6 +229,9 @@ footer a:hover {
 	#hamburger {
 		display: block;
 		color: black;
+	}
+	form div {
+		font-size:.8em;
 	}
 }
 
