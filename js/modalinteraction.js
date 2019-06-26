@@ -57,7 +57,12 @@ const rsvpform = `
   </div>
   <div>
   	<label for="form_diet">Dietary Restrictions:</label>
-  	<textarea id="form_diet" name="diet"></textarea>
+  	<!--<textarea id="form_diet" name="diet"></textarea>-->
+  	<input type="radio" id="form_diet" name="diet" value="none">None
+    <input type="radio" name="diet" value="vegan">Vegan
+    <input type="radio" name="diet" value="vegetarian">Vegetarian
+    <input type="radio" name="diet" value="other">Other (please specify):
+    <input type="text" name="diet_other">
   </div>
   <div class="button">
     <button type="submit">Submit</button>
