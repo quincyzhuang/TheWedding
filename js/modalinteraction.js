@@ -39,30 +39,30 @@ const rsvpform = `
   <h2>RSVP Form</h2>
   <div>
     <label for="form_name">Your First and Last Name:</label>
-    <input type="text" id="form_name" name="full_name" required autofocus>
+    <input type="text" class="m_text" id="form_name" name="full_name" required autofocus>
   </div>
   <div>
   	<label for="form_email">Your Email Address:</label>
-  	<input type="email" id="form_email" name="email">
+  	<input type="email" class="m_text" id="form_email" name="email">
   </div>
   <div>
-    <label for="form_plusone">Will you be bringing a +1?</label>
+    <label for="form_plusone">Will you be bringing a +1?</label><br>
     <!--<input type="checkbox" id="form_plusone" value="1" name="plus_one">-->
-    <input type="radio" id="form_plusone" name="plradio" value="1">Yes
+    <input type="radio" id="form_plusone" name="plradio" value="1">Yes<br>
     <input type="radio" name="plradio" value="0">No
   </div>
   <div>
     	<label for="form_poname">+1's First and Last Name:</label>
-    	<input type="text" id="form_poname" name="1full_name">
+    	<input type="text" class="m_text" id="form_poname" name="1full_name">
   </div>
   <div>
-  	<label for="form_diet">Dietary Restrictions:</label>
+  	<label for="form_diet">Dietary Restrictions:</label><br>
   	<!--<textarea id="form_diet" name="diet"></textarea>-->
-  	<input type="radio" id="form_diet" name="diet" value="none">None
-    <input type="radio" name="diet" value="vegan">Vegan
-    <input type="radio" name="diet" value="vegetarian">Vegetarian
+  	<input type="radio" id="form_diet" name="diet" value="none">None<br>
+    <input type="radio" name="diet" value="vegan">Vegan<br>
+    <input type="radio" name="diet" value="vegetarian">Vegetarian<br>
     <input type="radio" name="diet" value="other">Other (please specify):
-    <input type="text" name="diet_other">
+    <input type="text" class="m_text" name="diet_other">
   </div>
   <div class="button">
     <button type="submit">Submit</button>
