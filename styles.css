@@ -60,6 +60,7 @@
 #hamburger {
 	display:none;
 	padding-top:2%;
+	padding-bottom:2%;
 }
 
 #hamburger div {
@@ -74,9 +75,9 @@
 	position:absolute;
 	top:0;
 	left:0;
-	background-color: #5477af;
-	color: #FFFFFF;
-	width:80%;
+	background-color: #98baf0;
+	color: #000000;
+	width:70%;
 	z-index:9;
 	height:100%;
 	margin:0;
@@ -94,11 +95,9 @@
 	margin:0;
 }
 
-.mobiletop {
-	/*margin-top:35px;*/
-}
 .mobile_flex_header li {
-	padding:10% 0 10% 5%;
+	padding:10% 0 10% 0%;
+	text-align:center;
 }
 
 .mobile_flex_header li a {
@@ -212,6 +211,8 @@ form div {
 	width:70%;
 	margin: 10% auto 0 auto;
 	padding: 2% 5% 2% 5%;
+	overflow-y:auto;
+	max-height: 60%;
 }
 #modal_close {
 	float:right;
@@ -247,6 +248,20 @@ form div {
 	form .m_text {
 		height:2em;
 		width:100%;
+	}
+
+	.rsvpbutton {
+		width: 80%;
+		font-size: 2em;
+		padding: 5% 0 5% 0;
+	}
+
+	.text_side {
+		font-size:1.1em;
+		margin:0 2% 0 2%;
+	}
+	#modal p {
+		font-size:1.2em;
 	}
 }
 

@@ -20,17 +20,49 @@ const mobileclosebuttom = document.getElementById("closemobile");
 
 var vpwidth = window.innerWidth;
 //Modal content begins here
-const storycontent = '<h2>Our Story</h2> Hello, this is our story.';
-
-const detailscontent = `<h2>Details</h2>
-Here are the details for this event.
+const storycontent = `<h1>Our Story</h1>
+<p>
+	Rebecca and Quincy met in a biomedical engineering class at UT Austin in the Autumn of 2012. Prior to that, Quincy had no knowledge of Rebecca,
+	but Rebecca knew of Quincy as the Pikachu-wearing beanie kid. From that point onwards, they became good friends and sat next
+	to each other in classes as often as possible.
+</p>
+<p>
+	Inevitably, the two started developing feelings for each other. Quincy made an out-of-character move in accompanying Rebecca to 
+	a campus festival, where Rebecca had thai tea for the first time (too late in life if you ask me). Rebecca ate lunch with Quincy at Zen, which threw 
+	her school budget out the window. On a fateful in late February 2013, Rebecca plucked up the courage to ask Quincy out to dinner, much to Quincy's surprise and delight.
+</p>
+<p>
+	Rebecca and Quincy officially became a couple on March 5th, 2013. They shared many great memories for the remainder of their time at UT Austin.
+	Sadly, after graduation in May 2015, Quincy moved to Madison, Wisconsin to work at a glorified farm while Rebecca stayed in Texas to work for IBM. They endured a long distance
+	relationship until June 2018. Rebecca credits mutual travel opportunities and nightly phone calls as being key during those 3 difficult years. Quincy credits Terraria.
+</p>
+<p>
+	Quincy moved to Austin, TX in June 2018 to be with Rebecca. He proposed to Rebecca on UT campus on January 25th, 2019.
+</p>	
 `;
 
-const vipcontent = `<h2>VIPs</h2>
+const detailscontent = `<h1>Details</h1>
+<h3>Location</h3>
+<div>
+	1234 Wedding Street<br>
+	Austin,TX 78723<br>
+	<a href="linktogooglemaps">Directions</a>
+</div>
+<h3>Date/Time</h3>
+<div>
+	4/20/2020 12:00:00
+</div>
+<h3>Other information</h3>
+<div>
+	Something about venue logistics/parking/etc
+</div>
+`;
+
+const vipcontent = `<h1>VIPs</h1>
 Here are the VIPs for this event.
 `;
 
-const registrycontent = `<h2>Registry</h2>
+const registrycontent = `<h1>Registry</h1>
 Here is the wedding registry
 `;
 
