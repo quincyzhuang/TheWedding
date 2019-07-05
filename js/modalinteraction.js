@@ -31,7 +31,7 @@ const storycontent = `<h1>Our Story</h1>
 <p>
 	Inevitably, the two started developing feelings for each other. Quincy made an out-of-character move by accompanying Rebecca to 
 	a campus festival, where Rebecca had thai tea for the first time (too late in life if you ask me). Rebecca ate lunch with Quincy at Zen, which threw 
-	her school budget out the window! Luckily, the fries were tasty. On a fateful in late February 2013, Rebecca plucked up the courage to ask Quincy out to dinner, much to Quincy's disbelief.
+	her school budget out the window! Luckily, the fries were tasty. On a fateful day in late February 2013, Rebecca plucked up the courage to ask Quincy out to dinner, much to Quincy's disbelief.
 </p>
 <p>
 	Rebecca and Quincy officially became a couple on March 5th, 2013. They shared many great memories for the remainder of their time at UT Austin.
