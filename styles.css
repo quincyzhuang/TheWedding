@@ -233,7 +233,7 @@ form div {
 		color: black;
 	}
 	form div {
-		font-size:.8em;
+		font-size:1.1em;
 	}
 
 	form button {
@@ -252,7 +252,8 @@ form div {
 	.rsvpbutton {
 		width: 80%;
 		font-size: 2em;
-		padding: 5% 0 5% 0;
+		padding: 8% 0 8% 0;
+		text-align:center;
 	}
 
 	.text_side {
@@ -262,6 +263,11 @@ form div {
 	#modal p {
 		font-size:1.2em;
 	}
+	#modal_content {
+		width:80%;
+		max-height:70%;
+	}
+
 }
 
 @media only screen and (min-width: 550px) {
