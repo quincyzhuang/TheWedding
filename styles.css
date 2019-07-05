@@ -72,10 +72,10 @@
 
 #mobilemenu {
 	display:none;
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
-	background-color: #98baf0;
+	background-color: #EFEEEE;
 	color: #000000;
 	width:70%;
 	z-index:9;
@@ -219,7 +219,6 @@ form div {
 	font-weight:bold;
 	font-size:30px;
 }
-
 
 #modal_close:hover,#modal_close:focus {
 	cursor:pointer;

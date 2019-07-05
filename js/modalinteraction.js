@@ -18,7 +18,9 @@ const mobilemenu = document.getElementById("mobilemenu");
 const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
 
+var keylistener = false;
 var vpwidth = window.innerWidth;
+
 //Modal content begins here
 const storycontent = `<h1>Our Story</h1>
 <p>
@@ -27,9 +29,9 @@ const storycontent = `<h1>Our Story</h1>
 	to each other in classes as often as possible.
 </p>
 <p>
-	Inevitably, the two started developing feelings for each other. Quincy made an out-of-character move in accompanying Rebecca to 
+	Inevitably, the two started developing feelings for each other. Quincy made an out-of-character move by accompanying Rebecca to 
 	a campus festival, where Rebecca had thai tea for the first time (too late in life if you ask me). Rebecca ate lunch with Quincy at Zen, which threw 
-	her school budget out the window. On a fateful in late February 2013, Rebecca plucked up the courage to ask Quincy out to dinner, much to Quincy's surprise and delight.
+	her school budget out the window! Luckily, the fries were tasty. On a fateful in late February 2013, Rebecca plucked up the courage to ask Quincy out to dinner, much to Quincy's disbelief.
 </p>
 <p>
 	Rebecca and Quincy officially became a couple on March 5th, 2013. They shared many great memories for the remainder of their time at UT Austin.
@@ -67,7 +69,7 @@ Here is the wedding registry
 `;
 
 const rsvpform = `
-<form action="https://pi.wuzhuangclan.tk/rsvp.php" method="post">
+<form action="https://pi.wuzhuangclan.tk/rsvp.php" method="post" id="f_rsvp">
   <h2>RSVP Form</h2>
   <div>
     <label for="form_name">Your First and Last Name:</label>
@@ -79,9 +81,8 @@ const rsvpform = `
   </div>
   <div>
     <label for="form_plusone">Will you be bringing a +1?</label><br>
-    <!--<input type="checkbox" id="form_plusone" value="1" name="plus_one">-->
-    <input type="radio" id="form_plusone" name="plradio" value="1">Yes<br>
-    <input type="radio" name="plradio" value="0">No
+    <input type="radio" id="form_plusone_yes" name="plradio" value="1">Yes<br>
+    <input type="radio" id="form_plusone_no" name="plradio" value="0">No
   </div>
   <div>
     	<label for="form_poname">+1's First and Last Name:</label>
@@ -97,7 +98,7 @@ const rsvpform = `
     <input type="text" class="m_text" name="diet_other">
   </div>
   <div class="button">
-    <button type="submit">Submit</button>
+    <button type="submit" id="f_rsvp_submit">Submit</button>
   </div>
 </form>
 `;
@@ -110,6 +111,7 @@ const showMobileMenu = (event) => {
 
 const closeModal = () => {
 	modal.style.display = "none";
+	cleanUpDynamicListeners();
 }
 const closeMobileMenu = () => {
 	mobilemenu.style.display = "none";
@@ -139,6 +141,40 @@ const isDescendant = (parent,child) => {
 		node = node.parentNode;
 	}
 	return false;
+}
+
+const enableSubmit = () => {
+	let poname = document.getElementById('form_poname').value.length;
+	let submit = document.getElementById('f_rsvp_submit');
+	if(poname > 0) {
+		submit.disabled = false;
+	}
+}
+
+const cleanUpDynamicListeners = () => {
+	keylistener = false;
+	document.getElementById('form_poname').removeEventListener('keypress',enableSubmit);
+}
+
+const dynamicElements = (event) => {
+	if(isDescendant(document.getElementById('f_rsvp'), event.target)) {
+		let yes = document.getElementById('form_plusone_yes').checked;
+		let no = document.getElementById('form_plusone_no').checked;
+		let name = document.getElementById('form_poname')
+		let poname = document.getElementById('form_poname').value.length;
+		let submit = document.getElementById('f_rsvp_submit');
+		if((yes === true) && (poname === 0)) {
+			submit.disabled = true;
+			if (keylistener === false) {
+				name.addEventListener('keypress',enableSubmit);
+				keylistener = true;
+			}
+		} else if((yes === true) && (poname > 0 )) {
+			submit.disabled = false;
+		} else if(no === true) {
+			submit.disabled = false;
+		}
+	}
 }
 
 const showModal = (event) => {
@@ -219,3 +255,5 @@ hamburger.addEventListener('click',showMobileMenu);
 window.addEventListener('resize',resizeClose);
 mobileclosebuttom.addEventListener('click',closeMobileMenu);
 rsvp.addEventListener('click',showModal);
+modalcontent.addEventListener('click',dynamicElements);
+overlay.addEventListener('click',closeMobileMenu)
