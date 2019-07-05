@@ -70,7 +70,7 @@ Here is the wedding registry
 
 const rsvpform = `
 <form action="https://pi.wuzhuangclan.tk/rsvp.php" method="post" id="f_rsvp">
-  <h2>RSVP Form</h2>
+  <h2>RSVP</h2>
   <div>
     <label for="form_name">Your First and Last Name:</label>
     <input type="text" class="m_text" id="form_name" name="full_name" required autofocus>
