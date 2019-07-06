@@ -18,7 +18,6 @@ const mobilemenu = document.getElementById("mobilemenu");
 const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
 
-var keylistener = false;
 var vpwidth = window.innerWidth;
 
 //Modal content begins here
@@ -111,7 +110,6 @@ const showMobileMenu = (event) => {
 
 const closeModal = () => {
 	modal.style.display = "none";
-	cleanUpDynamicListeners();
 }
 const closeMobileMenu = () => {
 	mobilemenu.style.display = "none";
@@ -151,11 +149,6 @@ const enableSubmit = () => {
 	}
 }
 
-const cleanUpDynamicListeners = () => {
-	keylistener = false;
-	document.getElementById('form_poname').removeEventListener('keypress',enableSubmit);
-}
-
 const dynamicElements = (event) => {
 	if(isDescendant(document.getElementById('f_rsvp'), event.target)) {
 		let yes = document.getElementById('form_plusone_yes').checked;
@@ -165,10 +158,8 @@ const dynamicElements = (event) => {
 		let submit = document.getElementById('f_rsvp_submit');
 		if((yes === true) && (poname === 0)) {
 			submit.disabled = true;
-			if (keylistener === false) {
-				name.addEventListener('keypress',enableSubmit);
-				keylistener = true;
-			}
+			name.removeEventListener('keypress',enableSubmit);
+			name.addEventListener('keypress',enableSubmit);
 		} else if((yes === true) && (poname > 0 )) {
 			submit.disabled = false;
 		} else if(no === true) {
