@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="main">
-			<nav class="header whitebk">
+			<nav class="header bk">
 				<ul class="flex_header">
 					<div id="hamburger">
 						<div></div>
@@ -33,6 +33,9 @@
 					<li>
 						<a href="#" id="head_registry">Registry</a>
 					</li>
+					<li>
+						<a href="#" id="head_rsvp">RSVP</a>
+					</li>
 				</ul>
 			</nav>
 			<div id="mobilemenu" class="animated fadeInLeft faster">
@@ -49,39 +52,42 @@
 					<li id="mobile_registry">
 						<a href="#">Registry</a>
 					</li>
+					<li id="mobile_rsvp">
+						<a href="#">RSVP</a>
+					</li>
 					<li id="closemobile">
 						Close Menu
 					</li>
 				</ul>
 			</div>
 			<div class="primary">
-					<div class="picture_side">
-						<img src ="media/QR_atUT.jpg" class="qrpic">
+				<div class="text_side">
+					<div class="event_title">Rebecca & Quincy</div>
+					<div class="countdown">
+						Countdown to Wedding Day:
+						<span id="day">00D</span>
+						<span id="hour">00H</span>
+						<span id="minute">00M</span>
+						<span id="second">00S</span><br>
 					</div>
-					<div class="text_side">
-						<hr class="textsidebreak"></hr><br>
-						<span class="event_title">Rebecca & Quincy 2020</span><br>
-						<span class="date">Spring 2020</span><br>
-						<span class="location">Austin,TX</span><br>
-						Time to wedding:
-						<span class="countdown">
-							<span id="day">00D</span>
-							<span id="hour">00H</span>
-							<span id="minute">00M</span>
-							<span id="second">00S</span><br>
+				</div>
+				<div class="picture_side">
+					<img src ="media/QR_atUT.jpg" class="qrpic">
+				</div>
+				<div class="text_side_2">
+					<div class="date">Spring 2021</div>
+					<div class="location">Austin,TX</div>
+				</div>
+				<!-- Modals -->
+				<div id="modal">
+					<div id="modal_content" class="animated fadeInDown faster">
+						<span id="modal_close">&times</span>
+						<span id="modal_injection">
+							<h2>Title</h2>
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 						</span>
-						<div class="rsvpbutton" id="rsvp">RSVP</div> <!--add onclick event-->
 					</div>
-					<!-- Modals -->
-					<div id="modal">
-						<div id="modal_content" class="animated fadeInDown faster">
-							<span id="modal_close">&times</span>
-							<span id="modal_injection">
-								<h2>Title</h2>
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							</span>
-						</div>
-					</div>
+				</div>
 			</div>
 		</div>
 		<footer>

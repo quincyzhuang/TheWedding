@@ -4,7 +4,7 @@ const min = document.getElementById("minute");
 const sec = document.getElementById("second");
 const countdown = document.getElementsByClassName("countdown")[0];
 
-const weddingdatetime = "4/20/2020 00:00:00 UTC"
+const weddingdatetime = "4/20/2021 00:00:00 UTC"
 const weddingts = new Date(weddingdatetime).getTime();
 
 

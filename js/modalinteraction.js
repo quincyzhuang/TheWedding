@@ -3,7 +3,8 @@ const details = document.getElementById("head_details");
 const vip = document.getElementById("head_vip");
 const registry = document.getElementById("head_registry");
 const hamburger = document.getElementById("hamburger");
-const rsvp = document.getElementById("rsvp");
+const rsvp_h = document.getElementById("head_rsvp");
+const rsvp_m = document.getElementById("mobile_rsvp");
 
 const m_story = document.getElementById("mobile_story");
 const m_details = document.getElementById("mobile_details");
@@ -19,6 +20,8 @@ const overlay = document.getElementById("overlay");
 const mobileclosebuttom = document.getElementById("closemobile");
 
 var vpwidth = window.innerWidth;
+const mobileModalTextFactor = "120%";
+const desktopModalTextFactor = "120%";
 
 //Modal content begins here
 const storycontent = `<h1>Our Story</h1>
@@ -179,54 +182,70 @@ const showModal = (event) => {
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=storycontent;
+			text.style.fontSize=desktopModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "mobile_story":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=storycontent;
+			text.style.fontSize=mobileModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "head_details":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=detailscontent;
+			text.style.fontSize=desktopModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "mobile_details":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=detailscontent;
+			text.style.fontSize=mobileModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "head_vip":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=vipcontent;
+			text.style.fontSize=desktopModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "mobile_vip":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=vipcontent;
+			text.style.fontSize=mobileModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "head_registry":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=registrycontent;
+			text.style.fontSize=desktopModalTextFactor;
 			modalbody.append(text);
 			break;
 		case "mobile_registry":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=registrycontent;
+			text.style.fontSize=mobileModalTextFactor;
 			modalbody.append(text);
 			break
-		case "rsvp":
+		case "head_rsvp":
 			modalbody.textContent = '';
 			text = document.createElement("div");
 			text.innerHTML=rsvpform;
+			text.style.fontSize=desktopModalTextFactor;
+			modalbody.append(text);
+			break
+		case "mobile_rsvp":
+			modalbody.textContent = '';
+			text = document.createElement("div");
+			text.innerHTML=rsvpform;
+			text.style.fontSize=mobileModalTextFactor;
 			modalbody.append(text);
 	}
 	modal.style.display = "block";
@@ -245,6 +264,7 @@ modal.addEventListener('click',clickOutside);
 hamburger.addEventListener('click',showMobileMenu);
 window.addEventListener('resize',resizeClose);
 mobileclosebuttom.addEventListener('click',closeMobileMenu);
-rsvp.addEventListener('click',showModal);
+rsvp_m.addEventListener('click',showModal);
+rsvp_h.addEventListener('click',showModal);
 modalcontent.addEventListener('click',dynamicElements);
 overlay.addEventListener('click',closeMobileMenu)

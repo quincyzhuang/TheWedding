@@ -1,3 +1,6 @@
+ html {
+
+ }
  html,body {
  	height: 100%;
  	font-family: 'Quicksand', sans-serif;
@@ -26,19 +29,20 @@
  }
 
 .header {
-	color: #000000;
+	color: #ffffff;
 	font-weight:bold;
 	z-index:10;
 }
 
-.whitebk {
-	background: #FFFFFF; /* Old browsers */
+.bk {
+	background: #000000; /* Old browsers */
 	opacity:1;
 }
 
 .flex_header {
 	display:flex;
 	align-items:center;
+	justify-content:center;
 	list-style-type: none;
 	padding-left: 20px;
 	margin: 0 auto 0 auto;
@@ -51,7 +55,7 @@
 .flex_header li a {
 	text-decoration: inherit;
 	color:inherit;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 .flex_header li a:hover {
@@ -59,8 +63,7 @@
 }
 #hamburger {
 	display:none;
-	padding-top:2%;
-	padding-bottom:2%;
+	padding: 2% 2% 2% 0;
 }
 
 #hamburger div {
@@ -117,52 +120,36 @@
 	font-size:1em;
 }
 .primary {
- 	overflow:hidden;
  	display: flex;
- 	flex-direction: row;
+ 	flex-direction: column;
  	flex-wrap: wrap;
- 	justify-content: center;
+ 	align-items: center;
  }
+
 .picture_side {
- 	padding:0;
- 	width:60%;
- 	background-color:#000000;
- 	text-align:center;
- 	flex-grow:1;
+ 	margin-top:2vh;
  }
 .qrpic {
-	width:100%;
+	width:80vh;
 }
 .text_side {
 	text-align:center;
-	background-color: #FFFFFF;
 	color:#000000;
-	margin: 0 auto 0 auto;
+	margin: 3vh auto 0 auto;
 	flex-grow:1;
+	font-size:1.6em;
 }
 
-.textsidebreak {
-	margin-top:0;
-	border-width:1px;
-	margin-bottom:0px;
+.text_side_2 {
+	color:#000000;
+	font-size:2.2em;
+	text-align:center;
 }
-
+.date {
+}
 .event_title {
-	font-size: 2.5em;
-}
-
-.rsvpbutton {
-	border: solid black;
-	font-size:1.5em;
-	transition: border-width 0.5s;
-	width: 50%;
-	margin: 20px auto 15px auto;
-	padding: 0;
-}
-
-.rsvpbutton:hover {
-	color: white;
-	background-color: black;
+	font-size: 2.8em;
+	padding-bottom:2%;
 }
 
 footer {
@@ -182,10 +169,11 @@ footer div {
 
 footer a {
 	color: #FFFFFF;
+	text-decoration:none;
 }
 
 footer a:hover {
-	text-decoration: unerline;
+	text-decoration: underline;
 	color: red;
 }
 
@@ -225,6 +213,13 @@ form div {
 }
 
 @media only screen and (max-width: 550px) {
+	.bk {
+		background: #ffffff;
+	}
+	.flex_header {
+		justify-content:left;
+	}
+	
 	.flex_header li a {
 		display:none;
 	}
@@ -248,23 +243,25 @@ form div {
 		height:2em;
 		width:100%;
 	}
-
-	.rsvpbutton {
-		width: 80%;
-		font-size: 2em;
-		padding: 8% 0 8% 0;
-		text-align:center;
+	.primary {
+		flex-direction:row;
+		justify-content:center;
+		padding-top:1%;
 	}
-
 	.text_side {
 		font-size:1.1em;
 		margin:0 2% 0 2%;
 	}
-	#modal p {
-		font-size:1.2em;
+	.text_side_2{
+		padding-top:1%;
 	}
+
+	.qrpic {
+		width:100%
+	}
+
 	#modal_content {
-		width:80%;
+		width:85%;
 		max-height:70%;
 	}
 
@@ -272,14 +269,6 @@ form div {
 
 @media only screen and (min-width: 550px) {
 	#mobilemenu{
-		display:none;
-	}
-}
-@media only screen and (max-width: 990px) {
-	.text_side {
-		margin-left:1%;
-	}
-	.textsidebreak {
 		display:none;
 	}
 }
